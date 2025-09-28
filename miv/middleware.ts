@@ -38,6 +38,10 @@ export async function middleware(req: NextRequest) {
       return NextResponse.redirect(dashboardUrl)
     }
     return NextResponse.next()
+  }else {
+    if(pathname === '/'){
+      return NextResponse.next()
+    }
   }
 
   const loginUrl = req.nextUrl.clone()
